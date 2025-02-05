@@ -6,7 +6,7 @@ Create the entity-relationship diagram to model a database for Keepcoding, colle
 
 A PDF with the diagram and a brief explanation of it must be submitted.
 
-📝[Solution](https://github.com/IrisMejuto/Practice-SQL-y-DW/blob/main/1/KeepCoding.drawio.png)
+📝[Solution](https://github.com/IrisMejuto/Practice-SQL-y-DW/blob/main/1/KeepCoding%20Entity%20Relation%20Diagram.pdf)
 
 ## 2. Database Creation 
 Develop a script to create the tables and necessary constraints according to the diagram provided in the previous step.
@@ -14,7 +14,7 @@ The script must be executable in PostgreSQL.
 
 Submit the requested code in a `.sql` file.
 
-📝[Solution](https://github.com/IrisMejuto/Practice-SQL-y-DW/blob/main/1/KeepCoding%20Entity%20Relation%20Diagram.pdf)
+📝[Solution](https://github.com/IrisMejuto/Practice-SQL-y-DW/blob/main/2/2.KeepCoding_DDBB_Creation.sql)
 
 ## 3. Create ivr_detail TABLE
 We will create the data model for a customer service IVR.
