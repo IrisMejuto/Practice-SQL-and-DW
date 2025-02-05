@@ -1,11 +1,11 @@
-DROP TABLE IF EXISTS enrollments;
-DROP TABLE IF EXISTS bolsa_talento;
-DROP TABLE IF EXISTS modules;
-DROP TABLE IF EXISTS students;
-DROP TABLE IF EXISTS bootcamps;
-DROP TABLE IF EXISTS bootcamps_edition;
-DROP TABLE IF EXISTS coordinators;
-DROP TABLE IF EXISTS teachers;
+--DROP TABLE IF EXISTS enrollments;
+--DROP TABLE IF EXISTS bolsa_talento;
+--DROP TABLE IF EXISTS modules;
+--DROP TABLE IF EXISTS students;
+--DROP TABLE IF EXISTS bootcamps;
+--DROP TABLE IF EXISTS bootcamps_edition;
+--DROP TABLE IF EXISTS coordinators;
+--DROP TABLE IF EXISTS teachers;
 
 
 --Table Students
