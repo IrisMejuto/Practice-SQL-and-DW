@@ -1,0 +1,24 @@
+# KeepCoding Entity Relation Diagram
+
+This is the entity-relationship model of the KeepCoding database.
+
+
+![KeepCoding Model]()
+
+
+These are the tables it consists of and their relationships: 
+
+### 1:N - One to Many 
+
+* Students : Enrollments 
+* Bootcamps : Bootcamps_Edition 
+* Bootcamps_Edition : Enrollments
+* Bootcamps_Edition : Modules 
+* Coordinators : Bootcamps_Edition 
+* Teachers : Modules
+
+
+### 1:1 - One to One
+
+* Students : Bolsa_Talento 
+
