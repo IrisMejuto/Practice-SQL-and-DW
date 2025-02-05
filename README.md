@@ -1,16 +1,20 @@
 # Practice-SQL-y-DW
 Repository for solving Advanced SQL and DW exercises, including ER diagram modeling, table creation, field calculations, and data cleaning functions.
 
-## 1. ENTITY-RELATION DIAGRAM
+## 1. Entity Relation Diagram
 Create the entity-relationship diagram to model a database for Keepcoding, collecting data from students, bootcamps, modules, professors, etc.
 A PDF with the diagram and a brief explanation of it must be submitted.
 
-## 2. DATABASE CREATION
+📝[Solution](https://github.com/IrisMejuto/Practice-SQL-y-DW/blob/main/1/KeepCoding.drawio.png)
+
+## 2. Database Creation 
 Develop a script to create the tables and necessary constraints according to the diagram provided in the previous step.
 The script must be executable in PostgreSQL.
 Submit the requested code in a `.sql` file.
 
-## 3. CREATE ivr_detail TABLE
+📝[Solution](https://github.com/IrisMejuto/Practice-SQL-y-DW/blob/main/1/KeepCoding%20Entity%20Relation%20Diagram.pdf)
+
+## 3. Create ivr_detail TABLE
 We will create the data model for a customer service IVR.
 From the files `ivr_calls`, `ivr_modules`, and `ivr_steps`, create the tables with the same names in the `keepcoding` dataset.
 In `ivr_calls`, we find the data related to the calls.
@@ -121,7 +125,7 @@ We want the following fields:
 
 Submit the SQL code that generates the `ivr_summary` table within the `keepcoding` dataset.
 
-## 13. CREATE CLEAN_INTEGER FUNCTION
+## 13. Create clean_integer function
 Create an integer cleaning function that returns the value `-999999` if a `NULL` is passed.
 
 Submit the SQL code that generates the `clean_integer` function within the `keepcoding` dataset.
