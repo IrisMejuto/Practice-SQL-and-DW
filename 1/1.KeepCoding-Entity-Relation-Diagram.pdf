@@ -3,7 +3,7 @@
 This is the entity-relationship model of the KeepCoding database.
 
 
-![KeepCoding Model]()
+![KeepCoding Model](1/KeepCoding.drawio.png)
 
 
 These are the tables it consists of and their relationships: 
