@@ -14,7 +14,7 @@ The script must be executable in PostgreSQL.
 
 Submit the requested code in a `.sql` file.
 
-📝[Solution](https://github.com/IrisMejuto/Practice-SQL-y-DW/blob/main/2/2.KeepCoding_DDBB_Creation.sql)
+📝[Solution](https://github.com/IrisMejuto/Practice-SQL-y-DW/blob/main/2/02_KeepCoding_DDBB_Creation.sql)
 
 ## 3. Create ivr_detail TABLE
 We will create the data model for a customer service IVR.
