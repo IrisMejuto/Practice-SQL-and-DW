@@ -57,7 +57,7 @@ The fields `calls_start_date_id` and `calls_end_date_id` are calculated date fie
 
 Submit the SQL code that generates the `ivr_detail` table in a `.sql` file. The table should be created within the `keepcoding` dataset, and the project name should not appear in the query.
 
-📝[Solution](https://github.com/IrisMejuto/Practice-SQL-y-DW/blob/main/3/table_ivr_detail.sql)
+📝[Solution](https://github.com/IrisMejuto/Practice-SQL-y-DW/blob/main/3/03_table_ivr_detail.sql)
 
 ## 4. Generate vdn_aggregation field
 Generate the field for each call. That is, we want to have the `calls_ivr_id` and `vdn_aggregation` fields with the following logic:
