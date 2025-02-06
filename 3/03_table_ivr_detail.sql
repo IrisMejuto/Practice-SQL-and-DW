@@ -26,8 +26,8 @@ SELECT
   customer_phone,
   billing_account_id
 FROM `keepcoding.ivr_calls` cal
-left join `keepcoding.ivr_modules` mol
-on cal.ivr_id = mol.ivr_id
-left join `keepcoding.ivr_steps` ste
-on mol.ivr_id = ste.ivr_id and mol.module_sequece = ste.module_sequece
+LEFT JOIN `keepcoding.ivr_modules` mol
+ON cal.ivr_id = mol.ivr_id
+LEFT JOIN `keepcoding.ivr_steps` ste
+ON mol.ivr_id = ste.ivr_id AND mol.module_sequece = ste.module_sequece
 ;
