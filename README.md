@@ -65,7 +65,7 @@ It is a generalization of the `vdn_label` field. If `vdn_label` starts with `ATC
 
 Submit the code in a `.sql` file.
 
-📝[Solution](https://github.com/IrisMejuto/Practice-SQL-y-DW/blob/main/04/04_vdn_aggregation.sql)
+📝[Solution](https://github.com/IrisMejuto/Practice-SQL-y-DW/blob/main/4/04_vdn_aggregation.sql)
 
 ## 5. Generate document_type and document_identification fields
 Sometimes it is possible to identify the client in one of the `detail` steps by obtaining their document type and identification.
