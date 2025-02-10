@@ -6,13 +6,13 @@ WITH document_id_type AS (
       ELSE 'UNKNOWN'
     END as document_type,
     document_identification,
-    ROW_NUMBER() OVER (PARTITION BY CAST(calls_ivr_id AS STRING) ORDER BY 
+    ROW_NUMBER() OVER (PARTITION BY CAST(calls_ivr_id as STRING) ORDER BY 
         CASE 
-          WHEN document_type IN ('DNI', 'NIE', 'CIF', 'PASSPORT') THEN 1
+          WHEN document_type IN ('DNI', 'NIE', 'CIF', 'PASSPORT') then 1
           ELSE 2 
         END,
         document_identification
-    ) as rn
+    ) AS rn
   FROM `keepcoding.ivr_detail`
 )
 SELECT 
@@ -20,4 +20,4 @@ SELECT
   document_type,
   document_identification
 FROM document_id_type
-WHERE rn = 1;
+where rn = 1;
