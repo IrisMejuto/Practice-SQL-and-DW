@@ -83,7 +83,7 @@ As in the previous exercise, we want to have one record per call and only one id
 
 Submit the code in a `.sql` file.
 
-📝[Solution]()
+📝[Solution](https://github.com/IrisMejuto/Practice-SQL-and-DW/blob/main/6/06_customer_phone.sql)
 
 ## 7. Generate billing_account_id field
 Sometimes it is possible to identify the client in one of the `detail` steps by obtaining their customer number.
