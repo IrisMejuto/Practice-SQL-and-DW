@@ -120,7 +120,7 @@ As in the previous exercise, we want to have one record per call and two flags i
 
 Submit the code in a `.sql` file.
 
-📝[Solution]()
+📝[Solution](https://github.com/IrisMejuto/Practice-SQL-and-DW/blob/main/11/11_%20repeated_phone_24H_and_cause_recall_phone_24H.sql)
 
 ## 12. CREATE ivr_summary TABLE (Extra credit)
 Using the `ivr_detail` table and the code from all previous exercises, create the `ivr_summary` table. This will be a summary of the call, including the most important call indicators. Therefore, there will only be one record per call.
@@ -149,13 +149,11 @@ Using the `ivr_detail` table and the code from all previous exercises, create th
 
 Submit the SQL code that generates the `ivr_summary` table within the `keepcoding` dataset.
 
-📝[Solution]()
+📝[Solution](https://github.com/IrisMejuto/Practice-SQL-and-DW/blob/main/12/12_table_ivr_summary.sql)
 
 ## 13. Create clean_integer function
 Create an integer cleaning function that returns the value `-999999` if a `NULL` is passed.
 
-📝[Solution]()
-
 Submit the SQL code that generates the `clean_integer` function within the `keepcoding` dataset.
 
-📝[Solution]()
+📝[Solution](https://github.com/IrisMejuto/Practice-SQL-and-DW/blob/main/13/13_function_clean_integer.sql)
