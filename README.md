@@ -6,7 +6,7 @@ Create the entity-relationship diagram to model a database for Keepcoding, colle
 
 A PDF with the diagram and a brief explanation of it must be submitted.
 
-📝[Solution](https://github.com/IrisMejuto/Practice-SQL-y-DW/blob/main/1/KeepCoding%20Entity%20Relation%20Diagram.pdf)
+📝[Solution](https://github.com/IrisMejuto/Practice-SQL-and-DW/blob/main/01/KeepCoding%20Entity%20Relation%20Diagram.pdf)
 
 ## 2. Database Creation 
 Develop a script to create the tables and necessary constraints according to the diagram provided in the previous step.
@@ -14,7 +14,7 @@ The script must be executable in PostgreSQL.
 
 Submit the requested code in a `.sql` file.
 
-📝[Solution](https://github.com/IrisMejuto/Practice-SQL-y-DW/blob/main/2/02_KeepCoding_DDBB_Creation.sql)
+📝[Solution](https://github.com/IrisMejuto/Practice-SQL-and-DW/blob/main/02/02_KeepCoding_DDBB_Creation.sql)
 
 ## 3. Create ivr_detail TABLE
 We will create the data model for a customer service IVR.
@@ -57,7 +57,7 @@ The fields `calls_start_date_id` and `calls_end_date_id` are calculated date fie
 
 Submit the SQL code that generates the `ivr_detail` table in a `.sql` file. The table should be created within the `keepcoding` dataset, and the project name should not appear in the query.
 
-📝[Solution](https://github.com/IrisMejuto/Practice-SQL-y-DW/blob/main/3/03_table_ivr_detail.sql)
+📝[Solution](https://github.com/IrisMejuto/Practice-SQL-and-DW/blob/main/03/03_table_ivr_detail.sql)
 
 ## 4. Generate vdn_aggregation field
 Generate the field for each call. That is, we want to have the `calls_ivr_id` and `vdn_aggregation` fields with the following logic:
@@ -65,7 +65,7 @@ It is a generalization of the `vdn_label` field. If `vdn_label` starts with `ATC
 
 Submit the code in a `.sql` file.
 
-📝[Solution](https://github.com/IrisMejuto/Practice-SQL-y-DW/blob/main/4/04_vdn_aggregation.sql)
+📝[Solution](https://github.com/IrisMejuto/Practice-SQL-and-DW/blob/main/04/04_vdn_aggregation.sql)
 
 ## 5. Generate document_type and document_identification fields
 Sometimes it is possible to identify the client in one of the `detail` steps by obtaining their document type and identification.
@@ -74,7 +74,7 @@ As in the previous exercise, we want to have one record per call and only one id
 
 Submit the code in a `.sql` file.
 
-📝[Solution](https://github.com/IrisMejuto/Practice-SQL-and-DW/blob/main/5/05_document_type_and_document_identification.sql)
+📝[Solution](https://github.com/IrisMejuto/Practice-SQL-and-DW/blob/main/05/05_document_type_and_document_identification.sql)
 
 ## 6. Generate customer_phone field
 Sometimes it is possible to identify the client in one of the `detail` steps by obtaining their phone number.
@@ -83,7 +83,7 @@ As in the previous exercise, we want to have one record per call and only one id
 
 Submit the code in a `.sql` file.
 
-📝[Solution](https://github.com/IrisMejuto/Practice-SQL-and-DW/blob/main/6/06_customer_phone.sql)
+📝[Solution](https://github.com/IrisMejuto/Practice-SQL-and-DW/blob/main/06/06_customer_phone.sql)
 
 ## 7. Generate billing_account_id field
 Sometimes it is possible to identify the client in one of the `detail` steps by obtaining their customer number.
@@ -92,21 +92,21 @@ As in the previous exercise, we want to have one record per call and only one id
 
 Submit the code in a `.sql` file.
 
-📝[Solution](https://github.com/IrisMejuto/Practice-SQL-and-DW/blob/main/7/07_%20billing_account_id.sql)
+📝[Solution](https://github.com/IrisMejuto/Practice-SQL-and-DW/blob/main/07/07_%20billing_account_id.sql)
 
 ## 8. Generate masiva_lg field
 As in the previous exercise, we want to have one record per call and a flag indicating whether the call passed through the `AVERIA_MASIVA` module. If it did, mark it with `1`, otherwise set it to `0`.
 
 Submit the code in a `.sql` file.
 
-📝[Solution](https://github.com/IrisMejuto/Practice-SQL-and-DW/blob/main/8/08_masiva_lg.sql)
+📝[Solution](https://github.com/IrisMejuto/Practice-SQL-and-DW/blob/main/08/08_masiva_lg.sql)
 
 ## 9. Generate info_by_phone_lg field
 As in the previous exercise, we want to have one record per call and a flag indicating whether the call passed through the step named `CUSTOMERINFOBYPHONE.TX` and its `step_result` is `OK`, meaning we were able to identify the customer by their phone number. In that case, set the flag to `1`, otherwise set it to `0`.
 
 Submit the code in a `.sql` file.
 
-📝[Solution](https://github.com/IrisMejuto/Practice-SQL-and-DW/blob/main/9/09_info_by_phone_lg.sql)
+📝[Solution](https://github.com/IrisMejuto/Practice-SQL-and-DW/blob/main/09/09_info_by_phone_lg.sql)
 
 ## 10. Generate info_by_dni_lg field
 As in the previous exercise, we want to have one record per call and a flag indicating whether the call passed through the step named `CUSTOMERINFOBYDNI.TX` and its `step_result` is `OK`, meaning we were able to identify the customer by their DNI number. In that case, set the flag to `1`, otherwise set it to `0`.
