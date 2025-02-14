@@ -113,7 +113,7 @@ As in the previous exercise, we want to have one record per call and a flag indi
 
 Submit the code in a `.sql` file.
 
-📝[Solution]()
+📝[Solution](https://github.com/IrisMejuto/Practice-SQL-and-DW/blob/main/10/10_info_by_dni_lg.sql)
 
 ## 11. Generate repeated_phone_24H, cause_recall_phone_24H fields
 As in the previous exercise, we want to have one record per call and two flags indicating if the `calls_phone_number` had a call in the previous 24 hours or in the next 24 hours. If so, set these flags to `1`, otherwise set them to `0`.
