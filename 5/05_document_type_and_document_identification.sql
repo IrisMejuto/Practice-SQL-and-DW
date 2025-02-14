@@ -6,7 +6,7 @@ WITH document_id_type AS (
       ELSE 'UNKNOWN'
     END as document_type,
     document_identification,
-    ROW_NUMBER() OVER (PARTITION BY CAST(calls_ivr_id as STRING) ORDER BY 
+    ROW_NUMBER() OVER (PARTITION BY CAST(calls_ivr_id as STRING) order by 
         CASE 
           WHEN document_type IN ('DNI', 'NIE', 'CIF', 'PASSPORT') then 1
           ELSE 2 
