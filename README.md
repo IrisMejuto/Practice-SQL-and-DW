@@ -92,7 +92,7 @@ As in the previous exercise, we want to have one record per call and only one id
 
 Submit the code in a `.sql` file.
 
-📝[Solution]()
+📝[Solution](https://github.com/IrisMejuto/Practice-SQL-and-DW/blob/main/7/07_%20billing_account_id.sql)
 
 ## 8. Generate masiva_lg field
 As in the previous exercise, we want to have one record per call and a flag indicating whether the call passed through the `AVERIA_MASIVA` module. If it did, mark it with `1`, otherwise set it to `0`.
