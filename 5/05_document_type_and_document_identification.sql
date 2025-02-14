@@ -20,4 +20,4 @@ SELECT
   document_type,
   document_identification
 FROM document_id_type
-where rn = 1;
+where rn = 1 AND document_type != 'UNKNOWN';
