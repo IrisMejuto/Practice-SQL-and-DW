@@ -16,5 +16,5 @@ SELECT
   calls_ivr_id,
   customer_phone
 FROM customer_phone_update
-WHERE rn = 1
+WHERE rn = 1 AND customer_phone != 'UNKNOWN'
 ;
