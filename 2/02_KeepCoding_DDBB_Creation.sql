@@ -105,5 +105,5 @@ end_date DATE,
 bootcamp_edition_id int,
 teacher_id int,
 FOREIGN KEY (bootcamp_edition_id) REFERENCES bootcamps_edition(bootcamp_edition_id),
-FOREIGN KEY (teacher_id) REFERENCES teachers(teacher_id)
+foreign key (teacher_id) references teachers(teacher_id)
 );
