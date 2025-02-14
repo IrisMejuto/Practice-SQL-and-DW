@@ -1,23 +1,8 @@
-WITH document_id_type AS (
-  SELECT 
-    CAST(calls_ivr_id AS STRING) as calls_ivr_id,
-    CASE 
-      WHEN document_type IN ('DNI', 'NIE', 'CIF', 'PASSPORT') THEN document_type
-      ELSE 'UNKNOWN'
-    END as document_type,
-    document_identification,
-    ROW_NUMBER() OVER (PARTITION BY CAST(calls_ivr_id as STRING) order by 
-        CASE 
-          WHEN document_type IN ('DNI', 'NIE', 'CIF', 'PASSPORT') then 1
-          ELSE 2 
-        END,
-        document_identification
-    ) AS rn
-  FROM `keepcoding.ivr_detail`
-)
-SELECT 
-  calls_ivr_id,
+SELECT
+  cast(calls_ivr_id as string) as calls_ivr_id,
   document_type,
   document_identification
-FROM document_id_type
-where rn = 1 AND document_type != 'UNKNOWN';
+FROM `keepcoding.ivr_detail`
+WHERE document_type IN ('DNI', 'NIE', 'CIF', 'PASSPORT')
+qualify row_number() over(partition by calls_ivr_id order by document_type desc) = 1
+;
