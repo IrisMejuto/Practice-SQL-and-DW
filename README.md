@@ -106,7 +106,7 @@ As in the previous exercise, we want to have one record per call and a flag indi
 
 Submit the code in a `.sql` file.
 
-📝[Solution]()
+📝[Solution](https://github.com/IrisMejuto/Practice-SQL-and-DW/blob/main/9/09_info_by_phone_lg.sql)
 
 ## 10. Generate info_by_dni_lg field
 As in the previous exercise, we want to have one record per call and a flag indicating whether the call passed through the step named `CUSTOMERINFOBYDNI.TX` and its `step_result` is `OK`, meaning we were able to identify the customer by their DNI number. In that case, set the flag to `1`, otherwise set it to `0`.
