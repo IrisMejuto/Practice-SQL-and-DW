@@ -99,7 +99,7 @@ As in the previous exercise, we want to have one record per call and a flag indi
 
 Submit the code in a `.sql` file.
 
-📝[Solution]()
+📝[Solution](https://github.com/IrisMejuto/Practice-SQL-and-DW/blob/main/8/08_masiva_lg.sql)
 
 ## 9. Generate info_by_phone_lg field
 As in the previous exercise, we want to have one record per call and a flag indicating whether the call passed through the step named `CUSTOMERINFOBYPHONE.TX` and its `step_result` is `OK`, meaning we were able to identify the customer by their phone number. In that case, set the flag to `1`, otherwise set it to `0`.
