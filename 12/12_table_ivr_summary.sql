@@ -1,3 +1,4 @@
+CREATE TABLE keepcoding.ivr_summary AS
 WITH 
 vdn_aggregation AS(
   SELECT
@@ -10,34 +11,38 @@ vdn_aggregation AS(
   END AS vdn_aggregation
 FROM `keepcoding.ivr_detail` 
 ),
+
 document_info AS(
   SELECT
-  cast(calls_ivr_id as string) as calls_ivr_id,
+  calls_ivr_id,
   document_type,
   document_identification
 FROM `keepcoding.ivr_detail`
 WHERE document_type IN ('DNI', 'NIE', 'CIF', 'PASSPORT')
-qualify row_number() over(partition by calls_ivr_id order by document_type desc) = 1
+qualify row_number() over(partition by cast(calls_ivr_id as string) order by document_type desc) = 1
 ),
+
 customer_phone AS(
   SELECT
-  cast(calls_ivr_id as string) as calls_ivr_id,
+  calls_ivr_id,
   customer_phone
 FROM `keepcoding.ivr_detail`
 WHERE customer_phone != 'UNKNOWN'
-qualify row_number() over(partition by calls_ivr_id order by customer_phone desc) = 1
+qualify row_number() over(partition by cast(calls_ivr_id as string) order by customer_phone desc) = 1
 ),
+
 billing_account_id AS(
   SELECT 
-  CAST(calls_ivr_id AS STRING) as calls_ivr_id,
+  calls_ivr_id,
   billing_account_id
 FROM `keepcoding.ivr_detail`
 WHERE billing_account_id != 'UNKNOWN'
 AND billing_account_id IS NOT NULL
-qualify row_number() over(partition by calls_ivr_id order by billing_account_id desc) = 1
+qualify row_number() over(partition by cast(calls_ivr_id as string) order by billing_account_id desc) = 1
 ),
+
 masiva_lg AS(
-  SELECT
+  SELECT DISTINCT
   calls_ivr_id,
   CASE
     WHEN module_name ='AVERIA_MASIVA' THEN 1
@@ -45,8 +50,9 @@ masiva_lg AS(
   END AS masiva_lg
 FROM `keepcoding.ivr_detail`
 ),
+
 info_by_phone_lg AS(
-  SELECT
+  SELECT DISTINCT
   calls_ivr_id,
   CASE
     WHEN step_name = 'CUSTOMERINFOBYPHONE.TX' and step_result = 'OK' THEN 1
@@ -54,8 +60,9 @@ info_by_phone_lg AS(
   END AS  info_by_phone_lg
 FROM `keepcoding.ivr_detail`
 ),
+
 info_by_dni_lg AS(
-  SELECT
+  SELECT DISTINCT
   calls_ivr_id,
   CASE
     WHEN step_name = 'CUSTOMERINFOBYDNI.TX'and step_result = 'OK' THEN 1
@@ -63,25 +70,23 @@ info_by_dni_lg AS(
   END AS  info_by_dni_lg
 FROM `keepcoding.ivr_detail`
 ),
+
 repeated_and_cause_recall_phone_24H AS(
   SELECT
   calls_ivr_id,
   calls_phone_number,
   calls_start_date,
-  
   CASE
-    WHEN DATETIME_DIFF(calls_start_date,LAG(calls_start_date) over(partition by calls_phone_number order by calls_start_date),hour) <=24 THEN 1
+    WHEN DATETIME_DIFF(calls_start_date,LAG(calls_start_date) over(partition by cast(calls_phone_number as string) order by calls_start_date),hour) <=24 THEN 1
     ELSE 0
   END AS repeated_phone_24H,
-
   CASE
-    WHEN DATETIME_DIFF(LEAD(calls_start_date) OVER(partition by calls_phone_number order by calls_start_date), calls_start_date, hour) <=24 THEN 1
+    WHEN DATETIME_DIFF(LEAD(calls_start_date) OVER(partition by cast(calls_phone_number as string) order by calls_start_date), calls_start_date, hour) <=24 THEN 1
     ELSE 0
   END AS cause_recall_phone_24H
 FROM `keepcoding.ivr_detail`
 )
 
-CREATE TABLE keepcoding.ivr_summary AS
 SELECT
   det.calls_ivr_id as ivr_id,
   det.calls_phone_number as phone_number, 
@@ -103,7 +108,7 @@ SELECT
   dni_lg.info_by_dni_lg as info_by_dni_lg,
   re_ca.repeated_phone_24H as repeated_phone_24H,
   re_ca.cause_recall_phone_24H as cause_recall_phone_24H
-  FROM `keepcoding.ivr_detail` det
+FROM `keepcoding.ivr_detail` det
 LEFT JOIN vdn_aggregation vdn 
   ON det.calls_ivr_id = vdn.calls_ivr_id
 LEFT JOIN document_info doc 
@@ -120,4 +125,3 @@ LEFT JOIN info_by_dni_lg dni_lg
   ON det.calls_ivr_id = dni_lg.calls_ivr_id
 LEFT JOIN repeated_and_cause_recall_phone_24H re_ca 
   ON det.calls_ivr_id = re_ca.calls_ivr_id
-;
