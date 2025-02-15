@@ -1,4 +1,4 @@
-SELECT
+SELECT DISTINCT
   calls_ivr_id,
   CASE
     WHEN step_name = 'CUSTOMERINFOBYDNI.TX'and step_result = 'OK' THEN 1
