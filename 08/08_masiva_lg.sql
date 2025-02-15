@@ -1,4 +1,4 @@
-SELECT
+SELECT DISTINCT
   calls_ivr_id,
   CASE
     WHEN module_name ='AVERIA_MASIVA' THEN 1
