@@ -1,3 +1,4 @@
+---Revisar
 WITH 
 vdn_aggregation AS(
   SELECT
